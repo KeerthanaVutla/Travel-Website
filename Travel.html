@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wander Journal | Travel Blog</title>
+
+    <meta name="description"
+        content="Explore beautiful destinations, travel stories, guides and adventures around the world.">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: rgb(51, 51, 51);
+            line-height: 1.6;
+        }
+
+
+        header {
+            background-color: rgb(255, 255, 255);
+            padding: 18px 8%;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 27px;
+            color: rgb(38, 61, 50);
+        }
+
+        .logo span {
+            color: rgb(196, 139, 85);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgb(51, 51, 51);
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            color: rgb(196, 139, 85);
+        }
+
+
+        .hero {
+            height: 600px;
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.35),
+                    rgba(0, 0, 0, 0.35)),
+                url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            color: rgb(255, 255, 255);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .small-heading {
+            color: rgb(185, 133, 82);
+            font-size: 14px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 55px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: rgb(185, 133, 82);
+            color: rgb(255, 255, 255);
+            padding: 13px 28px;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        .btn:hover {
+            background-color: rgb(141, 99, 61);
+        }
+
+
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 90px 10%;
+        }
+
+        .about-image {
+            width: 50%;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+        }
+
+        .about-content {
+            width: 50%;
+        }
+
+        .about-content h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: rgb(38, 61, 50);
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 35px;
+            color: rgb(38, 61, 50);
+        }
+
+        .section-heading p {
+            margin-top: 10px;
+        }
+
+        .destinations {
+            background-color: rgb(247, 247, 242);
+            padding: 80px 8%;
+        }
+
+        .destination-container {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .destination-card {
+            background-color: rgb(255, 255, 255);
+            width: 33.33%;
+            text-align: center;
+            padding-bottom: 20px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .destination-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .destination-card h3 {
+            font-size: 23px;
+            margin: 15px 0 5px;
+            color: rgb(38, 61, 50);
+        }
+
+        .destination-card p {
+            padding: 0 15px;
+        }
+
+
+        .blog {
+            padding: 80px 8%;
+        }
+
+        .blog-container {
+            display: flex;
+            gap: 25px;
+        }
+
+        .blog-card {
+            width: 33.33%;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 22px;
+        }
+
+        .date {
+            color: rgb(185, 133, 82);
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .blog-content h3 {
+            color: rgb(38, 61, 50);
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .blog-content p {
+            margin-bottom: 15px;
+        }
+
+        .blog-content a {
+            color: rgb(185, 133, 82);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+        .quote {
+            background-color: rgb(23, 38, 54);
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 70px 10%;
+        }
+
+        .quote h2 {
+            font-size: 28px;
+            font-style: italic;
+        }
+
+        .quote p {
+            margin-top: 15px;
+            color: rgb(212, 173, 131);
+        }
+
+
+        .contact {
+            padding: 80px 10%;
+            background-color: rgb(247, 247, 242);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid rgb(221, 221, 221);
+            outline: none;
+            font-size: 15px;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: rgb(185, 133, 82);
+        }
+
+        .contact-form button {
+            background-color: rgb(42, 69, 97);
+            color: rgb(255, 255, 255);
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: rgb(185, 133, 82);
+        }
+
+   
+        footer {
+            background-color: rgb(42, 69, 97);
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .footer-links a:hover {
+            color: rgb(212, 173, 131);
+        }
+
+        .copyright {
+            border-top: 1px solid rgb(82, 97, 88);
+            padding-top: 20px;
+            margin-top: 20px;
+            font-size: 13px;
+        }
+
+
+        @media (max-width: 768px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                height: 500px;
+            }
+
+            .hero h2 {
+                font-size: 38px;
+            }
+
+            .about {
+                flex-direction: column;
+                padding: 50px 7%;
+            }
+
+            .about-image,
+            .about-content {
+                width: 100%;
+            }
+
+            .destination-container,
+            .blog-container {
+                flex-direction: column;
+            }
+
+            .destination-card,
+            .blog-card {
+                width: 100%;
+            }
+
+            .section-heading h2 {
+                font-size: 28px;
+            }
+        }
+    </Style>
+
+</head>
+
+<body>
+
+
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Wander Journal<span>.</span></h1>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#blog">Travel Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="small-heading">EXPLORE THE WORLD</p>
+
+            <h2>Discover The Beauty<br>Of Our World</h2>
+
+            <p>
+                Travel is more than visiting places.
+                It is about creating memories and experiencing life.
+            </p>
+
+            <a href="#destinations" class="btn">Explore Now</a>
+        </div>
+    </section>
+
+
+    <section class="about" id="about">
+
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" alt="Beautiful mountain landscape">
+        </div>
+
+        <div class="about-content">
+            <p class="small-heading">ABOUT OUR JOURNEY</p>
+
+            <h2>Travel More, Explore More</h2>
+
+            <p>
+                Welcome to Wander Journal! This is a place for
+                travel lovers who want to explore beautiful
+                destinations and discover different cultures.
+            </p>
+
+            <p>
+                From peaceful mountains to beautiful beaches,
+                we share travel experiences, helpful tips and
+                unforgettable adventures.
+            </p>
+
+            <a href="#blog" class="btn">Read Our Stories</a>
+        </div>
+
+    </section>
+
+
+    <section class="destinations" id="destinations">
+
+        <div class="section-heading">
+            <p class="small-heading">EXPLORE PLACES</p>
+            <h2>Popular Destinations</h2>
+            <p>Find inspiration for your next adventure.</p>
+        </div>
+
+        <div class="destination-container">
+
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Beautiful nature">
+                <h3>Switzerland</h3>
+                <p>Explore beautiful mountains and peaceful nature.</p>
+            </div>
+
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86" alt="Bali beach">
+                <h3>Bali</h3>
+                <p>Experience tropical beaches and island life.</p>
+            </div>
+
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Snowy mountain">
+                <h3>Himalayas</h3>
+                <p>Enjoy amazing mountain views and adventures.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="blog" id="blog">
+
+        <div class="section-heading">
+            <p class="small-heading">LATEST STORIES</p>
+            <h2>Our Travel Journal</h2>
+            <p>Stories and experiences from around the world.</p>
+        </div>
+
+        <div class="blog-container">
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1" alt="Lake and mountains">
+
+                <div class="blog-content">
+                    <p class="date">NOVEMBER 10, 2026</p>
+                    <h3>A Beautiful Journey Through Nature</h3>
+                    <p>
+                        Discover the beauty of nature and enjoy
+                        peaceful moments away from busy city life.
+                    </p>
+                    <a href="#contact">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Mountain travel">
+
+                <div class="blog-content">
+                    <p class="date">NOVEMBER 05, 2026</p>
+                    <h3>Top Places for Mountain Lovers</h3>
+                    <p>
+                        Explore breathtaking mountain destinations
+                        and make your next trip unforgettable.
+                    </p>
+                    <a href="#contact">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Beautiful beach">
+
+                <div class="blog-content">
+                    <p class="date">OCTOBER 28, 2026</p>
+                    <h3>Relaxing Beach Destinations</h3>
+                    <p>
+                        Enjoy beautiful beaches, golden sand,
+                        blue water and amazing sunsets.
+                    </p>
+                    <a href="#contact">Read More →</a>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <section class="quote">
+        <h2>"The world is a book, and those who do not travel read only one page."</h2>
+        <p> - Travel Inspiration</p>
+    </section>
+
+
+    <section class="contact" id="contact">
+
+        <div class="section-heading">
+            <p class="small-heading">GET IN TOUCH</p>
+            <h2>Let's Connect</h2>
+            <p>Have a travel story or suggestion? Contact us!</p>
+        </div>
+
+        <form class="contact-form">
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <input type="text" placeholder="Subject">
+
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+
+        </form>
+
+    </section>
+
+
+    <footer>
+        <h2>Wander Journal.</h2>
+
+        <p>Explore the world. Create memories. Share stories.</p>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#blog">Blog</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 Wander Journal. All Rights Reserved.
+        </p>
+    </footer>
+
+</body>
+
+</html>
+
+</body>
+
+</html>
